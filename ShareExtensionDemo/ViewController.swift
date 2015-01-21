@@ -25,8 +25,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var sampleImage1 = UIImage(named: "swift")
     var sampleImage2 = UIImage(named: "scannable")
     var sampleImage3 = UIImage(named: "wsj")
+    var sampleHTML1 : NSString?
+    var sampleHTML2 : NSString?
+    var sampleWebArchive : NSObject?
+    var sampleENEXFile : NSObject?
     
-    var actionArray: [String] = ["Share text", "Share URL", "Share text + URL", "Share multiple texts", "Share multiple URLs", "Share image", "Share image + text", "Share image + URL", "Share image + text + URL", "Share multiple images"]
+    var actionArray: [String] = ["Share text", "Share URL", "Share text + URL", "Share multiple texts", "Share multiple URLs", "Share image", "Share image + text", "Share image + URL", "Share image + text + URL", "Share multiple images", "Share HTML 1", "Share HTML 2", "Share WebArchive", "Share ENEX file"]
+    
+    func loadFiles() {
+        self.sampleHTML1 = htmlStringFromFile("html1")!
+        self.sampleHTML2 = htmlStringFromFile("html2")!
+        self.sampleWebArchive = WebArchiveItemSource(path: "webarchive1")
+        self.sampleENEXFile = ENEXItemSource(path: "enex1")
+    }
     
     override func loadView() {
         super.loadView()
@@ -44,6 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Register the UITableViewCell class with the tableView
         self.tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         
+        self.loadFiles()
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,6 +115,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.itemsToShare.append(sampleImage1!)
             self.itemsToShare.append(sampleImage2!)
             self.itemsToShare.append(sampleImage3!)
+        case 10:
+            self.itemsToShare.append(sampleHTML1!)
+        case 11:
+            self.itemsToShare.append(sampleHTML2!)
+        case 12:
+            self.itemsToShare.append(sampleWebArchive!)
+        case 13:
+            self.itemsToShare.append(sampleENEXFile!)
         default:
             assertionFailure("unexpected indexPath.row")
         }
@@ -110,5 +130,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
         presentViewController(activityViewController, animated: true, completion: nil)
     }
+    
+    func htmlStringFromFile(name: NSString) -> NSString? {
+        var filePath = NSBundle.mainBundle().pathForResource(name, ofType: "html")
+        return String(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)
+    }
 }
-

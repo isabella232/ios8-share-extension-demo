@@ -12,6 +12,12 @@
 		860233EA19F9978B00B0F682 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 860233E919F9978B00B0F682 /* Images.xcassets */; };
 		860233ED19F9978B00B0F682 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860233EB19F9978B00B0F682 /* LaunchScreen.xib */; };
 		860233F919F9978C00B0F682 /* ShareExtensionDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860233F819F9978C00B0F682 /* ShareExtensionDemoTests.swift */; };
+		86BDBF5B1A6F50DD0069FEE9 /* html1.html in Resources */ = {isa = PBXBuildFile; fileRef = 86BDBF581A6F50DD0069FEE9 /* html1.html */; };
+		86BDBF5C1A6F50DD0069FEE9 /* html2.html in Resources */ = {isa = PBXBuildFile; fileRef = 86BDBF591A6F50DD0069FEE9 /* html2.html */; };
+		86E587941A70491200472156 /* webarchive1.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 86E587931A70491200472156 /* webarchive1.webarchive */; };
+		86E587981A7055D600472156 /* WebArchiveItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E587971A7055D600472156 /* WebArchiveItemSource.swift */; };
+		86E587A21A70711E00472156 /* ENEXItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E587A11A70711D00472156 /* ENEXItemSource.swift */; };
+		86E587A41A7071C100472156 /* enex1.enex in Resources */ = {isa = PBXBuildFile; fileRef = 86E587A31A7071C100472156 /* enex1.enex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,12 @@
 		860233F219F9978C00B0F682 /* ShareExtensionDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareExtensionDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		860233F719F9978C00B0F682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		860233F819F9978C00B0F682 /* ShareExtensionDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtensionDemoTests.swift; sourceTree = "<group>"; };
+		86BDBF581A6F50DD0069FEE9 /* html1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = html1.html; sourceTree = "<group>"; };
+		86BDBF591A6F50DD0069FEE9 /* html2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = html2.html; sourceTree = "<group>"; };
+		86E587931A70491200472156 /* webarchive1.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = webarchive1.webarchive; sourceTree = "<group>"; };
+		86E587971A7055D600472156 /* WebArchiveItemSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebArchiveItemSource.swift; sourceTree = "<group>"; };
+		86E587A11A70711D00472156 /* ENEXItemSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENEXItemSource.swift; sourceTree = "<group>"; };
+		86E587A31A7071C100472156 /* enex1.enex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = enex1.enex; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +87,17 @@
 		860233DF19F9978B00B0F682 /* ShareExtensionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				86E587A31A7071C100472156 /* enex1.enex */,
+				86E587931A70491200472156 /* webarchive1.webarchive */,
+				86BDBF581A6F50DD0069FEE9 /* html1.html */,
+				86BDBF591A6F50DD0069FEE9 /* html2.html */,
 				860233E219F9978B00B0F682 /* AppDelegate.swift */,
 				860233E419F9978B00B0F682 /* ViewController.swift */,
 				860233E919F9978B00B0F682 /* Images.xcassets */,
 				860233EB19F9978B00B0F682 /* LaunchScreen.xib */,
 				860233E019F9978B00B0F682 /* Supporting Files */,
+				86E587971A7055D600472156 /* WebArchiveItemSource.swift */,
+				86E587A11A70711D00472156 /* ENEXItemSource.swift */,
 			);
 			path = ShareExtensionDemo;
 			sourceTree = "<group>";
@@ -189,8 +207,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86BDBF5B1A6F50DD0069FEE9 /* html1.html in Resources */,
+				86BDBF5C1A6F50DD0069FEE9 /* html2.html in Resources */,
 				860233ED19F9978B00B0F682 /* LaunchScreen.xib in Resources */,
 				860233EA19F9978B00B0F682 /* Images.xcassets in Resources */,
+				86E587941A70491200472156 /* webarchive1.webarchive in Resources */,
+				86E587A41A7071C100472156 /* enex1.enex in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +232,8 @@
 			files = (
 				860233E519F9978B00B0F682 /* ViewController.swift in Sources */,
 				860233E319F9978B00B0F682 /* AppDelegate.swift in Sources */,
+				86E587981A7055D600472156 /* WebArchiveItemSource.swift in Sources */,
+				86E587A21A70711E00472156 /* ENEXItemSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

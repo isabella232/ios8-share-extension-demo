@@ -27,16 +27,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var sampleImage3 = UIImage(named: "wsj")
     var sampleHTML1 : NSString?
     var sampleHTML2 : NSString?
-    var sampleWebArchive : NSObject?
-    var sampleENEXFile : NSObject?
+    var sampleWebArchive : NSURL?
+    var sampleENEXFile : NSURL?
     
     var actionArray: [String] = ["Share text", "Share URL", "Share text + URL", "Share multiple texts", "Share multiple URLs", "Share image", "Share image + text", "Share image + URL", "Share image + text + URL", "Share multiple images", "Share HTML 1", "Share HTML 2", "Share WebArchive", "Share ENEX file"]
     
     func loadFiles() {
         self.sampleHTML1 = htmlStringFromFile("html1")!
         self.sampleHTML2 = htmlStringFromFile("html2")!
-        self.sampleWebArchive = WebArchiveItemSource(path: "webarchive1")
-        self.sampleENEXFile = ENEXItemSource(path: "enex1")
+        self.sampleWebArchive = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("webarchive1", ofType: "webarchive")!)
+        self.sampleENEXFile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("enex1", ofType: "enex")!)
     }
     
     override func loadView() {
@@ -128,6 +128,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController!.sourceView = self.tableView.cellForRowAtIndexPath(indexPath)
         presentViewController(activityViewController, animated: true, completion: nil)
     }
     

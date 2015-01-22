@@ -9,7 +9,7 @@
 import UIKit
 import MobileCoreServices
 
-class WebArchiveItemSource: NSObject, UIActivityItemSource{
+class WebArchiveItemSource: NSObject, UIActivityItemSource {
     var path : String?
     
     init(path: String){

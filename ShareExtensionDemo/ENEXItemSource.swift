@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ENEXItemSource: NSObject {
+class ENEXItemSource: NSObject, UIActivityItemSource {
     var path : String?
     
     init(path: String){

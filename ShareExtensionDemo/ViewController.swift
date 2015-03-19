@@ -128,7 +128,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController!.sourceView = self.tableView.cellForRowAtIndexPath(indexPath)
+        if (activityViewController.popoverPresentationController != nil) {
+            activityViewController.popoverPresentationController!.sourceView = self.tableView.cellForRowAtIndexPath(indexPath)
+        }
         presentViewController(activityViewController, animated: true, completion: nil)
     }
     
